@@ -23,7 +23,33 @@ for (let i = 0; i < 10; i++) {
     console.log(i)
 }*/
 
-const inputField = document.getElementById("squareside")
+function hitung() {
+    var panjangSisi = parseFloat(document.getElementById('panjangSisi').value);
+
+    if (isNaN(panjangSisi) || panjangSisi <= 0) {
+        alert('Masukkan angka positif yang valid untuk panjang sisi.');
+        return;
+    }
+
+    var luas = panjangSisi * panjangSisi;
+    var keliling = 4 * panjangSisi;
+
+    var hasilElement = document.getElementById('hasil');
+    hasilElement.innerHTML = `Luas: ${luas.toFixed(2)} <br> Keliling: ${keliling.toFixed(2)}`;
+}
+
+function resetForm() {
+    document.getElementById('formKalkulator').reset();
+    document.getElementById('hasil').innerHTML = '';
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+
+
+
+/*const inputField = document.getElementById("squareside")
 const countButton = document.getElementById("katikButton")
 
 inputField.addEventListener('input', function () {
@@ -38,5 +64,7 @@ inputField.addEventListener('input', function () {
 function validateInput(input) {
     const integerRegex = /^-?\d+$/;
     return integerRegex.test(input)
-}
+}*/
+
+
 
